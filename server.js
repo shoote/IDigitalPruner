@@ -21,8 +21,8 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-// Excel file path
-const filePath = "enquiries.xlsx";
+// Excel file path (absolute path in project root)
+const filePath = path.join(__dirname, "enquiries.xlsx");
 
 // POST route for enquiry form
 app.post("/submit-enquiry", (req, res) => {
@@ -33,9 +33,11 @@ app.post("/submit-enquiry", (req, res) => {
     let wb;
     let ws;
 
+    // Check if file exists
     if (fs.existsSync(filePath)) {
       wb = xlsx.readFile(filePath);
       ws = wb.Sheets["Enquiries"];
+
       if (!ws) {
         ws = xlsx.utils.aoa_to_sheet([["Name", "Email", "Phone", "Message"]]);
         xlsx.utils.book_append_sheet(wb, ws, "Enquiries");
@@ -46,8 +48,11 @@ app.post("/submit-enquiry", (req, res) => {
       xlsx.utils.book_append_sheet(wb, ws, "Enquiries");
     }
 
+    // Read existing data and append new enquiry
     const data = xlsx.utils.sheet_to_json(ws);
     data.push({ Name: name, Email: email, Phone: phone, Message: message });
+
+    // Convert JSON back to sheet and save
     const newWS = xlsx.utils.json_to_sheet(data, { origin: "A1" });
     wb.Sheets["Enquiries"] = newWS;
     xlsx.writeFile(wb, filePath);
@@ -62,5 +67,5 @@ app.post("/submit-enquiry", (req, res) => {
 
 // Start server
 app.listen(PORT, () => {
-  console.log(`🚀 Server running at http://localhost:${PORT}`);
+  console.log(`🚀 Server running at port ${PORT}`);
 });
