@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In / Register - Digitalpreneur</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="logo">IDigital<span>Preneur</span></div>
+
+    <button class="nav-toggle">&#9776;</button>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Packages ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Pro</a></li>
+          <li><a href="#">Supreme</a></li>
+          <li><a href="#">Premium</a></li>
+          <li><a href="#">Premium Plus</a></li>
+        </ul>
+      </li>
+      <li><a href="enquiry.html" class="blinker">Enquiry</a></li>
+      <li><a href="login.html" class="btn-login">Login</a></li>
+    </ul>
+
+    <!-- Currency Switcher goes directly here -->
+    <div class="currency-switcher">
+      <button id="currency-btn">
+        <span id="current-currency">₹ INR</span> <i class="fas fa-chevron-down"></i>
+      </button>
+      <ul id="currency-dropdown" class="currency-dropdown">
+        <li data-currency="USD" data-symbol="$">$ USD</li>
+        <li data-currency="INR" data-symbol="₹">₹ INR</li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="auth-section">
+    <!-- Left Content -->
+    <div class="auth-left">
+      <h1>Welcome to IDigitalpreneur</h1>
+      <p>Unlock your potential with our curated courses and expert-led training. Join thousands of learners worldwide.
+      </p>
+      <ul>
+        <li>Access 100+ online courses</li>
+        <li>Get certificates for every course</li>
+        <li>Learn from industry experts</li>
+        <li>Join an active learning community</li>
+        <li>Career guidance & mentorship</li>
+      </ul>
+
+      <div class="download-box">
+        <p class="download-title">Scan here to Download our App!</p>
+        <div class="qr-code">
+          <img src="images/qrcode.png" alt="QR Code">
+        </div>
+        <p class="available-text">Available on Both...</p>
+
+        <!-- App buttons (stay horizontal) -->
+        <div class="auth-apps">
+          <div class="app-box">
+            <a href="#"><img src="images/app1.png" alt="Google Play"></a>
+          </div>
+          <div class="app-box">
+            <a href="#"><img src="images/app2.png" alt="App Store"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Content -->
+    <div class="auth-right">
+      <div class="auth-box">
+        <!-- Toggle Tabs -->
+        <div class="form-toggle">
+          <button id="signin-btn" class="active">Sign In</button>
+          <button id="register-btn">Register</button>
+        </div>
+
+        <!-- Sign In Form -->
+        <form id="signin-form" class="auth-form active">
+          <input type="email" placeholder="Email" required>
+          <input type="password" placeholder="Password" required>
+          <button type="submit" class="btn-primary">Sign In</button>
+
+          <div class="social-login">
+            <button class="btn-secondary"><i class="fab fa-google"></i> Google</button>
+            <button class="btn-secondary"><i class="fab fa-facebook-f"></i> Facebook</button>
+          </div>
+
+          <p class="form-switch">Don't have an account? <span id="goto-register">Register</span></p>
+        </form>
+
+
+        <!-- Register Form -->
+        <form id="register-form" class="auth-form">
+          <input type="text" placeholder="Full Name" required>
+          <input type="tel" placeholder="Phone Number" required>
+          <input type="email" placeholder="Email" required>
+          <input type="password" placeholder="Password" required>
+          <input type="password" placeholder="Confirm Password" required>
+          <div class="location-fields">
+            <input type="text" placeholder="Country" required>
+            <input type="text" placeholder="State" required>
+          </div>
+
+          <!-- Terms & Conditions -->
+          <div class="terms">
+            <input type="checkbox" id="terms" required>
+            <label for="terms">I accept the <a href="#">Terms & Conditions</a></label>
+          </div>
+
+          <button type="submit" class="btn-primary">Register</button>
+
+          <div class="social-login">
+            <button class="btn-secondary"><i class="fab fa-google"></i> Google</button>
+            <button class="btn-secondary"><i class="fab fa-facebook-f"></i> Facebook</button>
+          </div>
+
+          <!-- Already have account -->
+          <p class="form-switch">Already have an account? <span id="goto-signin">Sign In</span></p>
+        </form>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <!-- Left: Logo + Apps -->
+      <div class="footer-left">
+        <div class="footer-logo">IDIGITAL<span>PRENEUR</span></div>
+        <div class="footer-apps">
+          <a href="#"><img src="images/app1.png" alt="Google Play"></a>
+          <a href="#"><img src="images/app2.png" alt="App Store"></a>
+        </div>
+      </div>
+
+      <!-- Middle: Links (Vertical) -->
+      <div class="footer-links">
+        <h4>Support</h4>
+        <a href="courses.html">Courses</a>
+        <a href="#about">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="disclaimer.html">Disclaimer</a>
+      </div>
+      <!-- Middle: Links (Vertical) -->
+      <div class="footer-links">
+        <h4>Packages</h4>
+        <a href="pro.html">Pro</a>
+        <a href="supreme.html">Supreme</a>
+        <a href="premium.html">Premium</a>
+        <a href="premium+.html">Premium Plus</a>
+      </div>
+
+      <!-- Right: Social Icons -->
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-telegram"></i></a>
+      </div>
+
+    </div>
+
+    <!-- Bottom Row -->
+    <div class="footer-bottom">
+      <p>© iDigitalpreneur | All rights reserved • Terms & Conditions Applied</p>
+    </div>
+  </footer>
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>

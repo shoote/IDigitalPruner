@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hamburger Test</title>
+  <style>
+    body { margin: 0; background: #222; color: white; }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      background: #141c25;
+    }
+
+    .logo { font-weight: bold; }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      margin-left: auto;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .nav-toggle {
+      display: none;
+      font-size: 28px;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      margin-left: auto;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none; /* hidden by default */
+        flex-direction: column;
+        background: #141c25;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 15px;
+        border-radius: 8px;
+      }
+
+      .nav-links.active {
+        display: flex; /* shown when toggled */
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Logo</div>
+    <button class="nav-toggle">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Courses</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+  </nav>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const navToggle = document.querySelector(".nav-toggle");
+      const navLinks = document.querySelector(".nav-links");
+
+      navToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+    });
+  </script>
+</body>
+</html>
